@@ -4,7 +4,7 @@
 <!-- [![Build Status](https://img.shields.io/github/actions/workflow/status/yourusername/my-notes-rag/ci.yml)](https://github.com/yourusername/my-notes-rag/actions) -->
 <!-- [![License](https://img.shields.io/github/license/yourusername/my-notes-rag)](LICENSE) -->
 
-A Retrieval-Augmented Generation (RAG) system that ingests user notes and answers questions based on them. Built with Python, LangChain, and OpenAI for intelligent, context-aware responses.
+A Retrieval-Augmented Generation (RAG) system that ingests user notes and answers questions based on them. Built with Python,  , and OpenAI for intelligent, context-aware responses.
 
 ## Features
 
@@ -16,15 +16,29 @@ A Retrieval-Augmented Generation (RAG) system that ingests user notes and answer
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [API Reference](#api-reference)
-- [Development](#development)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
-- [Changelog](#changelog)
+- [My Notes RAG](#my-notes-rag)
+  - [Features](#features)
+  - [Table of Contents](#table-of-contents)
+  - [Goal of the project](#goal-of-the-project)
+  - [Installation](#installation)
+    - [Prerequisites](#prerequisites)
+    - [Steps](#steps)
+  - [Usage](#usage)
+    - [Quick Start](#quick-start)
+    - [Web Interface (if implemented)](#web-interface-if-implemented)
+    - [Examples](#examples)
+  - [Configuration](#configuration)
+  - [API Reference](#api-reference)
+  - [Development](#development)
+    - [Project Structure](#project-structure)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Changelog](#changelog)
+  - [Support](#support)
+
+## Goal of the project ##
+
+Build a personal RAG assistant that ingests notes and answers questions based only on those notes  
 
 ## Installation
 
@@ -46,9 +60,9 @@ A Retrieval-Augmented Generation (RAG) system that ingests user notes and answer
    ```
 
 3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+pip install -r requirements.txt
+```
 
 4. Set up environment variables:
    - Copy `.env.example` to `.env`
@@ -100,20 +114,6 @@ my-notes-rag/
 ├── docs/                # Documentation
 └── README.md            # This file
 ```
-
-### Setting Up for Development
-- Install dev dependencies: `pip install -r requirements-dev.txt`
-- Run linting: `flake8 src/`
-- Format code: `black src/`
-
-## Testing
-
-Run tests with:
-```bash
-pytest tests/
-```
-
-Coverage: `pytest --cov=src tests/`
 
 ## Contributing
 

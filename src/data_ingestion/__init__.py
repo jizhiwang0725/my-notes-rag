@@ -1,4 +1,4 @@
-from .loader import loadNotesFromFolder, loadFile
+from .loader import loadNotesFromFolder
 from .preprocessor import chunkAllNotes
 
-__all__ = ["loadNotesFromFolder", "loadFile", "chunkAllNotes"]
+__all__ = ["loadNotesFromFolder", "chunkAllNotes"]
