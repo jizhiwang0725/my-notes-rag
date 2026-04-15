@@ -6,7 +6,7 @@ Chunk one note
 '''
 
 def chunkText(text: str, chunkSize: int = 1000, chunckOverlap: int = 200) -> List[str]:
-    splitter = RecursiveCharacterTextSplitter(chunk_size=chunkSize, chunk_overlap=chunckOverlap, separators=["\n\n", "\n", "", ""])
+    splitter = RecursiveCharacterTextSplitter(chunk_size=chunkSize, chunk_overlap=chunckOverlap, separators=["\n\n", "\n", " ", ""])
     return splitter.split_text(text)
 
 '''
