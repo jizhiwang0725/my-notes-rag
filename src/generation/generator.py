@@ -1,4 +1,4 @@
-from .phi_activation import ragChain
+from src.ai_activation import *
 from typing import List, Any, Dict
 from src.utils import timer
 
@@ -6,8 +6,9 @@ from src.utils import timer
 Generates well structured answer 
 '''
 @timer
-def generateAnswer(myQuestion: str, myNotes: List[Dict[str, Any]]):
-
+def generateAnswer(myQuestion: str, myNotes: List[Dict[str, Any]], ):
+    
+    ragChain = aiActivate()
     # Notes used for the prompt 
     myNotes = "\n\n".join(text["text"] for text in myNotes)
     notes = f"""==============NOTES=============
