@@ -1,5 +1,7 @@
 import os
 from pypdf import PdfReader
+from typing import List
+import re
 
 
 '''
@@ -36,7 +38,7 @@ def loadPdfFile(filePath: str) -> str:
 '''
 Load all the files in the folder 
 '''
-def loadNotesFromFolder(folderPath: str) -> list[str]:
+def loadNotesFromFolder(folderPath: str) -> List[str]:
     notes = []
     for fileName in os.listdir(folderPath):
         filePath = os.path.join(folderPath, fileName)
@@ -51,8 +53,23 @@ def loadNotesFromFolder(folderPath: str) -> list[str]:
         except (FileNotFoundError, ValueError) as error:
             print(f"Skipped {fileName}: {error}")
 
-    return notes
+    return cleanFile(notes)
 
+'''
+Clean all the files 
+'''
+def cleanFile (rawTexts: List[str]) -> List[str]:
+    cleanTexts = []
+    for rawText in rawTexts:
+        
+        # This looks for lines that only contain bullets, spaces, or tabs, and deletes them
+        cleanText = re.sub(r'^[•\s]+$', '', rawText, flags=re.MULTILINE)
 
+        # Clean up any massive empty gaps left behind
+        cleanText = re.sub(r'\n{2,}', '\n\n', cleanText).strip()
+        
+        cleanTexts.append(cleanText)
+    
+    return cleanTexts 
 
 

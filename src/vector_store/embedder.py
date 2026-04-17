@@ -1,7 +1,6 @@
 import os 
 from typing import List
-from langchain.embeddings import HuggingFaceEmbeddings
-
+from langchain_huggingface import HuggingFaceEmbeddings
 
 '''
 Create a list of vectors for one chunked note
