@@ -1,5 +1,14 @@
+# System files
+.DS_Store
+
+# vscode
+.vscode/
+
 # Test case
 tests/
+
+# Documents 
+docs/
 
 # Database
 data/
