@@ -66,7 +66,10 @@ def cleanFile (rawTexts: List[str]) -> List[str]:
         cleanText = re.sub(r'^[•\s]+$', '', rawText, flags=re.MULTILINE)
 
         # Clean up any massive empty gaps left behind
-        cleanText = re.sub(r'\n{2,}', '\n\n', cleanText).strip()
+        cleanText = re.sub(r'\n{2,}', '\n\n', cleanText)
+        cleanText = re.sub(r'^—+$', '\n\n', cleanText)
+        cleanText = re.sub(r'[\n\t\r]+', ' ', cleanText)
+        
         
         cleanTexts.append(cleanText)
     
